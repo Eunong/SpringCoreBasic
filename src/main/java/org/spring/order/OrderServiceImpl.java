@@ -1,8 +1,8 @@
-package org.spring.discount;
+package org.spring.order;
 
+import org.spring.discount.DiscountPolicy;
 import org.spring.member.Member;
 import org.spring.member.MemberRepository;
-import org.spring.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService {
 

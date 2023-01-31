@@ -20,8 +20,8 @@ public class ApplicationContextBasicFindTest {
     void findBeanByName() {
         MemberService memberService = ac.getBean("memberService", MemberService.class); // ac.getBean(빈 이름, 타입)
 
-//        System.out.println("memberService = " + memberService);
-//        System.out.println("memberService.getClass() = " + memberService.getClass());
+       // System.out.println("memberService = " + memberService);
+       // System.out.println("memberService.getClass() = " + memberService.getClass());
 
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }

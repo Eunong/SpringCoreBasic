@@ -1,4 +1,4 @@
-package org.spring.discount;
+package org.spring.order;
 
 public interface OrderService {
 

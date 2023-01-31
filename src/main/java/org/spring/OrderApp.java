@@ -1,7 +1,7 @@
 package org.spring;
 
-import org.spring.discount.Order;
-import org.spring.discount.OrderService;
+import org.spring.order.Order;
+import org.spring.order.OrderService;
 import org.spring.member.Grade;
 import org.spring.member.Member;
 import org.spring.member.MemberService;

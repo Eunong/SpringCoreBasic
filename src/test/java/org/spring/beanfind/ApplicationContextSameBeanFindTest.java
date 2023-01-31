@@ -23,7 +23,7 @@ public class ApplicationContextSameBeanFindTest {
     void findBeanByTypeDuplication() {
 
         // org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'org.spring.member.MemberRepository' available: expected single matching bean but found 2: memberRepository1,memberRepository2
-//        MemberRepository bean = ac.getBean(MemberRepository.class);
+        // MemberRepository bean = ac.getBean(MemberRepository.class);
 
         // 성공 케이스
         assertThrows(NoUniqueBeanDefinitionException.class,

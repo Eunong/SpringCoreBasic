@@ -5,6 +5,8 @@ import org.spring.member.MemberRepository;
 import org.spring.member.MemberService;
 import org.spring.member.MemberServiceImpl;
 import org.spring.member.MemoryMemberRepository;
+import org.spring.order.OrderService;
+import org.spring.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

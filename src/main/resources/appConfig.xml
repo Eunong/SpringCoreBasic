@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="memberService" class="org.spring.member.MemberServiceImpl">
+        <constructor-arg name="memberRepository" ref="memberRepository"/> <!-- ref에 구현 객체 이름을 적는다 -->
+    </bean>
+
+    <bean id="memberRepository" class="org.spring.member.MemoryMemberRepository"/>
+
+    <bean id="orderService" class="org.spring.order.OrderServiceImpl">
+        <constructor-arg name="memberRepository" ref="memberRepository"/>
+        <constructor-arg name="discountPolicy" ref="discountPolicy"/>
+    </bean>
+
+    <bean id="discountPolicy" class="org.spring.discount.RateDiscountPolicy"/>
+
+</beans>
