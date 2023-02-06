@@ -43,8 +43,10 @@ public class AutoAppConfig {
          *                                           스프링Core와 같이 수동 등록 빈을 우선으로 생성하고 싶을 경우 설정을 변경해주면 된다.
          *                                           CoreApplication.java 클래스 수행 시 오류 메세지 : The bean 'memoryMemberRepository', defined in class path resource [org/spring/AutoAppConfig.class], could not be registered. A bean with that name has already been defined in file [/Users/eunyoung/workspace/project/SpringCoreBasic/out/production/classes/org/spring/member/MemoryMemberRepository.class] and overriding is disabled.
          */
+        /*
         @Bean("memoryMemberRepository")
         MemberRepository memberRepository() {
                 return new MemoryMemberRepository();
         }
+         */
 }
