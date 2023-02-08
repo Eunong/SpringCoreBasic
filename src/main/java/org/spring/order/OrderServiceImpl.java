@@ -1,12 +1,16 @@
 package org.spring.order;
 
+import lombok.RequiredArgsConstructor;
+import org.spring.annotation.MainDiscountPolicy;
 import org.spring.discount.DiscountPolicy;
 import org.spring.member.Member;
 import org.spring.member.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
+// @RequiredArgsConstructor // final이 붙은 변수를 가진 생성자를 자동으로 만들어줌
 public class OrderServiceImpl implements OrderService {
 
     // interface만 의존하도록 코드 변경 -> DIP 지키는 형태로 변경!
@@ -34,19 +38,20 @@ public class OrderServiceImpl implements OrderService {
      */
 
     // @Autowired // 생성자가 딱 1개인 경우 스프링 빈인 경우에는 @Autowired를 생략해도 자동으로 주입이 된다.
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    // @RequiredArgsConstructor 와 동일
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
+    // public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
         System.out.println("OrderServiceImpl.OrderServiceImpl");
         System.out.println("memberRepository = " + memberRepository + " discountPolicy = " + discountPolicy);
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
 
-    /*
-    public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    /*public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
-    }
-    */
+    }*/
+
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
@@ -57,7 +62,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     // 테스트용
-    public MemberRepository getMemberRepository() {
+    public MemberRepository getMemberRepository()  {
         return memberRepository;
     }
 }
